@@ -1,7 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { text } from '@angular/core/src/render3/instructions';
-import { KEY_CODE } from './key.list-enum';
-import { KeyMessages } from './key-messages';
+import { KEY_CODE } from './data/key-ax-codes.enum';
+import { KeyMessages } from './data/key-ax.messages';
 
 @Component({
   selector: 'lib-key-ax',

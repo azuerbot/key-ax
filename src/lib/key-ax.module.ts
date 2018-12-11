@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { KeyAxComponent } from './key-ax.component';
 
 @NgModule({
@@ -7,4 +7,9 @@ import { KeyAxComponent } from './key-ax.component';
   declarations: [KeyAxComponent],
   exports: [KeyAxComponent]
 })
-export class KeyAxModule { }
+export class KeyAxModule {
+
+  // static forRoot(config: CustomConfig): ModuleWithProviders {
+
+  // }
+}
