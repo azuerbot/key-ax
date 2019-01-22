@@ -1,6 +1,22 @@
 {
   "name": "keyax",
-  "version": "0.0.2",
+  "version": "0.1.4",
+  "description":"Directive used to facilitate the access to elements by using the keyboard.",
+  "author": "Azuer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azuerbot/key-ax.git"
+  },
+  "bugs": {
+    "url": "https://github.com/azuerbot/key-ax/issues"
+  },
+  "homepage": "https://github.com/azuerbot/key-ax",
+  "keywords": [
+    "angular",
+    "javascript",
+    "typescript",
+    "directive"
+  ],
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
