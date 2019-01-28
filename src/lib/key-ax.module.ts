@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { KeyAxComponent } from './key-ax.component';
-import { KeyAxDirective } from './key-ax.directive';
-import { KeyAxService } from './key-ax.service';
+import { KeyAxDirective } from './directives/key-ax.directive';
+import { KeyAxService } from './services/key-ax.service';
 
 @NgModule({
   imports: [
