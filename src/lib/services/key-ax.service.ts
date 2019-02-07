@@ -37,6 +37,10 @@ export class KeyAxService {
     return this.counting;
   }
 
+  public clearCounter() {
+    this.counting = false;
+  }
+
   public setLastLength(lastLenght: number) {
     this.lastLenght = lastLenght;
   }

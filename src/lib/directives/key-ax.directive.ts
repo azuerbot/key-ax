@@ -25,7 +25,7 @@ export class KeyAxDirective {
     }
 
     this.keyaxService.addKeys(event.key);
-    const comboTrack = this.combokeys.map(() => 1);
+    const comboTrack = this.combokeys.map(() => 0);
     if (!this.keyaxService.getCounting()) {
       this.countTime(comboTrack);
     } else {
@@ -43,6 +43,7 @@ export class KeyAxDirective {
       console.log('Time ended so keys need to be checked');
       const allKeys = this.keyaxService.getKeys();
       this.executeCombo(allKeys, comboTrack);
+      counter.unsubscribe();
     });
 
     const counter = timer(1000, 1000)
@@ -69,21 +70,24 @@ export class KeyAxDirective {
           console.log('Timer finished abd this are all  the Keys collected: ', allKeys);
           this.executeCombo(allKeys, comboTrack);
           console.log('Unsubscribing counter!!');
+          subscriber.unsubscribe();
           counter.unsubscribe();
         }
     });
   }
 
   public checkKeyCombo(keyCodes: any[], comboTrack: any[]): boolean {
-    this.combokeys.forEach(key => {
+    let f = 0;
+    this.combokeys.forEach((key, index) => {
       keyCodes.forEach(keyCode => {
         console.log('Validating if the pressed keys match with the configuration.');
-        if (key !== keyCode) {
-          comboTrack.push(0);
+        if (key === keyCode) {
+          comboTrack[index] = 1;
+          f++;
         }
       });
     });
-    const validCombo = (comboTrack.filter((i) => i === 0).length >= 1);
+    const validCombo = (comboTrack.filter((i) => i === 1).length === this.combokeys.length);
     this.keyaxService.clear();
     return validCombo;
   }
@@ -95,6 +99,7 @@ export class KeyAxDirective {
       console.log('Keys pressed: ', allKeys.join(','));
       this.element.nativeElement.focus();
     }
+    this.keyaxService.clearCounter();
   }
 
 }
