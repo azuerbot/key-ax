@@ -5,22 +5,22 @@ import { NgIf } from '@angular/common';
   providedIn: 'root'
 })
 export class KeyAxService {
-  public pressedKeys = [];
-  public counter = 1000;
-  public counting = false;
-  public lastLenght = 0;
+  private pressedKeys = [];
+  private counter = 1000;
+  private counting = false;
+  private lastLenght = 0;
 
   constructor() { }
 
-  public addKeys(key: string) {
+  public addPressedKeys(key: string) {
     this.pressedKeys.push(key);
   }
 
-  public getKeys(): any[] {
+  public getPressedKeys(): any[] {
     return this.pressedKeys;
   }
 
-  public clear() {
+  public clearPressedKeys() {
     this.pressedKeys = [];
   }
 

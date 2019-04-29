@@ -1,6 +1,6 @@
 {
   "name": "keyax",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description":"Directive used to facilitate the access to elements by using the keyboard.",
   "author": "Azuer",
   "repository": {
